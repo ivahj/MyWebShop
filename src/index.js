@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+var usersRouter = require('./database/users');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -37,9 +39,18 @@ const checkJwt = jwt({
   }),
   
   // Validate the audience and the issuer.
-  audience: '<API_IDENTIFIER>',
-  issuer: `https://<AUTH0_DOMAIN>/`,
+  audience: 'https://products-api',
+  issuer: `https://web-shop.eu.auth0.com/`,
   algorithms: ['RS256']
+});
+
+app.use(checkJwt);
+
+app.post('/user', (req, res) => {
+  User.create({
+    username: req.body.username,
+    password: req.body.password,
+  }).then(user => res.json(user));
 });
 
 app.post('/', async (req, res) => {
@@ -73,4 +84,4 @@ startDatabase().then(async () => {
     app.listen(3001, async () => {
       console.log('listening on port 3001');
     });
-  });
+});
