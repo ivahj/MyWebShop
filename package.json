@@ -1,0 +1,33 @@
+{
+  "name": "mywebshop",
+  "version": "1.0.0",
+  "description": "schoolProject",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivahj/WebSite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivahj/WebSite/issues"
+  },
+  "homepage": "https://github.com/ivahj/WebSite#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.17.3",
+    "express-jwt": "^6.1.1",
+    "helmet": "^5.0.2",
+    "jwks-rsa": "^2.0.5",
+    "mongodb": "^4.4.0",
+    "mongodb-memory-server": "^8.4.0",
+    "morgan": "^1.10.0"
+  },
+  "keywords": []
+}
